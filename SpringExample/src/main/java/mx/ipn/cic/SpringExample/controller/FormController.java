@@ -17,7 +17,7 @@ public class FormController {
 
 	@GetMapping(path = "/getForm")
 	public String getForm(
-			@RequestParam(name = "param1",required=false) String param,
+			@RequestParam(name = "param1", required=false) String param,
 			@RequestParam(name = "param2") String param2
 			) {
 

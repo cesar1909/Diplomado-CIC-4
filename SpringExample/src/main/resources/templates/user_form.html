@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de usuario</title>
+</head>
+<body>
+
+	<form action="#" method="post" th:action="@{/user/register}" th:object="${user}">
+	
+		<input type="text" placeholder="Nombre:" th:field="*{name}" />
+		
+		<input type="text" placeholder="Apellido:" th:field="*{lastname}" />
+		
+		<input type="number" placeholder="Edad" th:field="*{age}" /> 
+		
+		<input type="submit" title="Registrar"/>
+
+	</form>
+
+</body>
+</html>
