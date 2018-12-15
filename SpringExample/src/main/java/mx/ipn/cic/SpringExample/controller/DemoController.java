@@ -72,7 +72,7 @@ public class DemoController {
 
 		logger.info("Hola Mundo desde Spring!!");
 
-		return "hello";
+		return "demo/hello";
 
 	}
 
@@ -81,8 +81,12 @@ public class DemoController {
 
 		ModelAndView mav = new ModelAndView("demo/hello");
 
-		mav.addObject("message", "Bienvenido Manuel");
-
+		mav.addObject("message", "Hola Mundo desde Thymeleaf!");
+		
+		String[] nombres = {"Juan", "Manuel", "Mariana", "Más nombres"};
+		
+		mav.addObject("names", nombres);
+		
 		return mav;
 	}
 

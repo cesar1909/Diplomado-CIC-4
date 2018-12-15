@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
 <title>Mi primer html desde Spring</title>
@@ -7,6 +8,15 @@
 <body>
 
 	<h1>Hola Mundo desde Spring!</h1>
+	<h3>
+		Mensaje: (<span th:text="${message}"></span>)
+	</h3>
+
+	<ol>
+
+		<li th:each="name : ${names}" th:text="${name}" />
+
+	</ol>
 
 </body>
 </html>
