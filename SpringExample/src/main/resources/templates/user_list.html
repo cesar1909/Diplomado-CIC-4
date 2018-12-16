@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Aqui tienes a todos los usuarios</title>
+</head>
+<body>
+
+	<table>
+
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Edad</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.name}"></td>
+				<td th:text="${user.lastname}"></td>
+				<td th:text="${user.age}"></td>
+				
+				<td>
+				<a href="#" th:href="@{'/user/'+${user.id}+'/delete'}">
+				<button>Eliminar</button></a>
+				</td>
+
+			</tr>
+		</tbody>
+
+	</table>
+
+</body>
+</html>
