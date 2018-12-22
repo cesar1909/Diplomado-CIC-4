@@ -25,7 +25,7 @@
 				<td th:text="${user.age}"></td>
 				
 				<td>
-				<a href="#" th:href="@{'/user/'+${user.id}+'/delete'}">
+				<a href="#" th:href="@{|/user/${user.id}/delete|}">
 				<button>Eliminar</button></a>
 				</td>
 

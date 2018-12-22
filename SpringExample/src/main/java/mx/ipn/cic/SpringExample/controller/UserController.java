@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ import mx.ipn.cic.SpringExample.services.IUserService;
 public class UserController {
 
 	@Autowired
+	@Qualifier("PRODUCCION")
 	private IUserService userService;
 
 	private Log logger = LogFactory.getLog(UserController.class);

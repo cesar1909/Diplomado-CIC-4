@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import mx.ipn.cic.SpringExample.model.UserModel;
 import mx.ipn.cic.SpringExample.services.IUserService;
 
-@Service
+@Service//Ignorar este servicio
+@Qualifier(value="Testing")
 public class UserService implements IUserService {
 
 	private List<UserModel> userList;
