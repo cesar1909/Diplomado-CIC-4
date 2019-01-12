@@ -12,7 +12,7 @@ import mx.ipn.cic.SpringExample.repository.UserJPARepository;
 import mx.ipn.cic.SpringExample.services.IUserService;
 
 @Service
-@Qualifier(value="PRODUCCION")
+@Qualifier(value = "PRODUCCION")
 public class UserServiceDB implements IUserService {
 
 	@Autowired
@@ -33,47 +33,43 @@ public class UserServiceDB implements IUserService {
 
 	@Override
 	public List<UserModel> findAll() {
-		
+
 		return this.repository.findAll();
-		
+
 	}
 
 	@Override
 	public UserModel create(UserModel user) {
-		
+
 		return this.repository.save(user);
-		
+
 	}
 
 	@Override
 	public UserModel update(UserModel user) {
 
 		return this.repository.save(user);
-		
+
 	}
 
 	@Override
 	public boolean deleteById(Integer id) {
 
-		this.repository.deleteById(id);
-		
+		try {
+			this.repository.deleteById(id);
+		} catch (Exception e) {
+			return false;
+		}
+
 		return true;
 	}
 
 	@Override
 	public boolean delete(UserModel user) {
-		
+
 		this.repository.delete(user);
-		
+
 		return true;
 	}
 
 }
-
-
-
-
-
-
-
-
