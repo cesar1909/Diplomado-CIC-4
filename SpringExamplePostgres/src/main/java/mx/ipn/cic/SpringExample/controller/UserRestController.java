@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.ipn.cic.SpringExample.model.UserModel;
@@ -126,7 +125,7 @@ public class UserRestController {
 			Boolean result = this.userService.deleteById(id);
 
 			if (result) {
-				response = new ResponseEntity<>(HttpStatus.OK);
+				response = new ResponseEntity<>(HttpStatus.ACCEPTED);
 			} else {
 				response = new ResponseEntity<>(HttpStatus.NOT_FOUND);
 			}
